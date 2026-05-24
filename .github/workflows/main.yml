@@ -28,7 +28,8 @@ jobs:
     - name: Crear documentació
       run: |
         mkdir -p docs
-        pydoc -w manage
+        python -m pydoc -w manage
+        python -m pydoc -w core.views
         mv *.html docs/
 
     - name: Deploy GitHub Pages
