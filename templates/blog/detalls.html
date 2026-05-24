@@ -12,6 +12,6 @@
 {% block content %}
     <h1 class="detalls">{{post.title}}</h1>
     <p class="detalls">{{post.date}} - {{post.author}}</p>
-    <img id="banner" src="{% static 'blog/images/' %}{{ post.image }}">
+    <img id="img_detalls" src="{% static 'blog/images/' %}{{ post.image_name }}">
     <p class="detalls">{{post.content}}</p>
 {% endblock %}
