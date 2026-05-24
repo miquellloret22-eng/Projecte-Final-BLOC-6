@@ -1,0 +1,38 @@
+name: Generate Pydoc
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar repositori
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Instal·lar dependències
+      run: |
+        pip install -r requirements.txt
+
+    - name: Crear documentació
+      run: |
+        mkdir -p docs
+        pydoc -w manage
+        mv *.html docs/
+
+    - name: Deploy GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
