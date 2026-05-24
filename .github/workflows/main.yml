@@ -32,6 +32,10 @@ jobs:
         python -m pydoc -w blog.views
         mv *.html docs/
 
+        echo "<h1>Documentació del projecte</h1>" > docs/index.html
+        echo '<a href="manage.html">manage.py</a><br>' >> docs/index.html
+        echo '<a href="blog.views.html">blog.views</a><br>' >> docs/index.html
+
     - name: Deploy GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
