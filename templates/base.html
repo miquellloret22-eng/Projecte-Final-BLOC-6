@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset=UTF-8>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta mane="viewport", content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %} My page {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    {% block css_files %}
+    {% endblock %}
+</head>
+<header>
+    {% include "blog/includes/header.html" %}
+</header>
+<body>
+    {% block content %} {% endblock %}
+</body>
+<footer>
+    <p>&copy; 2026 Copyrigth: Blog de DJango en python</p>
+</footer>
+</html>

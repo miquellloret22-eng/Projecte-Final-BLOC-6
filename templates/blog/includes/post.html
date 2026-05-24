@@ -1,0 +1,9 @@
+{% load  static %}
+<div class="post">
+    <img src="{% static 'blog/images/' %}{{ info.image }}">
+    <h3>{{ info.title }}</h3>
+    <p>{{ info.except }}</p>
+    <button>
+        <a href="{% url 'post-details' info.slug%}">Veure noticia completa</a>
+    </button>
+</div>
