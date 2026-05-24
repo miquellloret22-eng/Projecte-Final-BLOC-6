@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% load  static %}
 <div class="post">
     <img src="{% static 'blog/images/' %}{{ info.image }}">
@@ -8,14 +7,3 @@
         <a href="{% url 'post-details' info.slug%}">Veure noticia completa</a>
     </button>
 </div>
-=======
-{% load  static %}
-<div class="post">
-    <img src="{% static 'blog/images/' %}{{ info.image }}">
-    <h3>{{ info.title }}</h3>
-    <p>{{ info.except }}</p>
-    <button>
-        <a href="{% url 'post-details' info.slug%}">Veure noticia completa</a>
-    </button>
-</div>
->>>>>>> d500bc5aa07b13dceb9cf0ff5334931561ee7d4d
