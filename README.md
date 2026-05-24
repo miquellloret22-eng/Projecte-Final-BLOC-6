@@ -51,3 +51,9 @@ Obrir el navegador a:
 ```bash
 http://127.0.0.1:8000
 ```
+
+## Documentació
+Obrir el navegador a:
+```bash
+https://miquellloret22-eng.github.io/Projecte-Final-BLOC-6/
+```
