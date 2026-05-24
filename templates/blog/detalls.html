@@ -11,7 +11,17 @@
 
 {% block content %}
     <h1 class="detalls">{{post.title}}</h1>
-    <p class="detalls">{{post.date}} - {{post.author}}</p>
+    <p class="detalls">{{post.date}} - <a href="">{{post.author}}</a></p>
     <img id="img_detalls" src="{% static 'blog/images/' %}{{ post.image_name }}">
     <p class="detalls">{{post.content}}</p>
+    <hr id="linia">
+    <h2>Etiquetes</h2>
+    <div class="etiquetes_btn">
+        {% for etiqueta in post.tags.all %}
+            <button><a href="">{{etiqueta}}</a></button>
+        {% empty %}
+            <p>No hi ha etiquetes</p>
+        {% endfor %}
+    </div>
+    
 {% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    Authors
+{% endblock %}
+
+{% block content %}
+    <h1>Llista d'Autors</h1>
+    <table id="taula_autors">
+        <tr>
+            <td>
+                <p><b>Nom</b></p>
+            </td>
+            <td>
+                <p><b>Cognoms</b></p>
+            </td>
+        </tr>
+        <tr><td colspan="4"><hr id="linia_autors"></td></tr>
+        {% for autor in autors %}
+            <tr>
+                <td class="fila_autors">{{autor.first_name}}</td>
+                <td class="fila_autors">{{autor.last_name}}</td>
+                <td colspan="2">
+                    <button><a href="">saber-ne +</a></button>
+                </td>
+            </tr>
+            <tr><td colspan="4"><hr class="linia2"></td></tr>
+        {% empty %}
+            <p>No hi ha autors</p>
+        {% endfor %}
+    </table>
+{% endblock %}
