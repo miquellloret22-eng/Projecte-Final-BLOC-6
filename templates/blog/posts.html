@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 {% load static %}
 
@@ -18,4 +19,26 @@
             <p>No hi ha posts</p>
         {% endfor %}
     </div>
+=======
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    Posts
+{% endblock %}
+
+{% block content %}
+    <h1>Llista de tots els posts</h1>
+    <div class="posts-grid">
+        {% for post in all_posts %}
+            {% include "blog/includes/post.html" with info=post %}
+        {% empty %}
+            <p>No hi ha posts</p>
+        {% endfor %}
+    </div>
+>>>>>>> d500bc5aa07b13dceb9cf0ff5334931561ee7d4d
 {% endblock %}
