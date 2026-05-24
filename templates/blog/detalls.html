@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load  static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    {{post.title}}
+{% endblock %}
+
+{% block content %}
+    <h1 class="detalls">{{post.title}}</h1>
+    <p class="detalls">{{post.date}} - {{post.author}}</p>
+    <img id="banner" src="{% static 'blog/images/' %}{{ post.image }}">
+    <p class="detalls">{{post.content}}</p>
+{% endblock %}

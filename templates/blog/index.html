@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load  static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    My blog
+{% endblock %}
+
+{% block content %}
+    <img id="banner" src="{% static 'blog/images/img1.jpg' %}">
+    <h1>Benvingut al Blog de Miquel Lloret</h1>
+    <p>Aquest es el projecte d'aprenentatge de python basat en DJango</p>
+    <h2>Els darrers Posts</h2>
+
+    <div class="posts-grid">
+        {% for post in ultims_posts %}
+            {% include "blog/includes/post.html" with info=post %}
+        {% empty %}
+            <p>No hi ha posts</p>
+        {% endfor %}
+    </div>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus esse nostrum omnis doloremque voluptate, adipisci
+        aliquid ut rerum distinctio inventore laudantium impedit debitis cum est ratione hic veritatis vel quidem.</p>
+{% endblock %}
