@@ -74,3 +74,13 @@ def author_details(request, id):
 
     except:
         raise Http404()
+
+def tags(request):
+    try:
+        ll_tags = Tag.objects.all()
+        return render(request, "blog/tags.html", {
+            "ll_tags": ll_tags
+        })
+    
+    except:
+        Http404()

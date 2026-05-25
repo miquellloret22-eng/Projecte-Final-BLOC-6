@@ -132,3 +132,16 @@ button {
     text-align: left;
     margin-left: 3%;
 }
+
+.etiquetes h1{
+    text-align: left;
+    padding-left: 5%;
+}
+
+.etiquetes button {
+    width: auto;
+    height: 40px;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 2%;
+}

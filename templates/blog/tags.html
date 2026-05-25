@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    Tags
+{% endblock %}
+
+{% block content %}
+    <div class="etiquetes">
+        <h1>Etiquetes</h1>
+        {% for etiqueta in ll_tags %}
+            <button><a href="">{{etiqueta.caption}}</a></button>
+        {% empty %}
+            <p>No hi ha posts</p>
+        {% endfor %}
+    </div>
+{% endblock %}
