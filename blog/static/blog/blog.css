@@ -127,3 +127,8 @@ button {
 #fila_autors {
     padding-left: 30px;
 }
+
+.detalls_autor {
+    text-align: left;
+    margin-left: 3%;
+}

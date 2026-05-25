@@ -10,10 +10,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="detalls">Detalls de l'autor</h1>
-    <p><b>Nom: </b>{{autor.first_name}}</p>
-    <p><b>Cognom: </b>{{autor.last_name}}</p>
-    <p><b>Adreça: </b>{{autor.email_address}}</p>
+    <div class="detalls_autor">
+        <h1 class="detalls">Detalls de l'autor</h1>
+        <p><b>Nom: </b>{{autor.first_name}}</p>
+        <p><b>Cognom: </b>{{autor.last_name}}</p>
+        <p><b>Adreça: </b>{{autor.email_address}}</p>
+    </div>
+    
 
     <h2>Posts publicats per {{autor}}</h2>
     <div class="posts-grid">

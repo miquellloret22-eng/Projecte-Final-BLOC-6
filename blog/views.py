@@ -60,12 +60,12 @@ def authors(request):
     except:
         raise Http404()
 
-def author_details(request, slug):
+def author_details(request, id):
     """
     Retorna detals_autor.html renderitzat
     """
     try:
-        autor = Author.objects.get(slug=slug)
+        autor = Author.objects.get(id=id)
         posts_autor = Post.objects.filter(author=autor)
         return render(request, "blog/detalls_autor.html", {
             "autor": autor,
