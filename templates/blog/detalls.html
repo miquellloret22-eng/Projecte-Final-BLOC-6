@@ -11,7 +11,7 @@
 
 {% block content %}
     <h1 class="detalls">{{post.title}}</h1>
-    <p class="detalls">{{post.date}} - <a href="">{{post.author}}</a></p>
+    <p class="detalls">{{post.date}} - <a href="{% url 'author-details' post.author.slug%}">{{post.author}}</a></p>
     <img id="img_detalls" src="{% static 'blog/images/' %}{{ post.image_name }}">
     <p class="detalls">{{post.content}}</p>
     <hr id="linia">

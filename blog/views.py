@@ -66,11 +66,11 @@ def author_details(request, slug):
     """
     try:
         autor = Author.objects.get(slug=slug)
-        posts_autor = Post.objects.all(author=autor)
+        posts_autor = Post.objects.filter(author=autor)
         return render(request, "blog/detalls_autor.html", {
             "autor": autor,
             "posts_autor": posts_autor
         })
 
     except:
-        raise Http404
+        raise Http404()
