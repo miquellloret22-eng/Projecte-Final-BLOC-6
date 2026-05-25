@@ -9,6 +9,7 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ("title",)
     
 class AuthorAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("first_name",)}
     list_display = ("first_name", "last_name", "email_address")
     search_fields = ("first_name",)
 

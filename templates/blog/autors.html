@@ -23,10 +23,10 @@
         <tr><td colspan="4"><hr id="linia_autors"></td></tr>
         {% for autor in autors %}
             <tr>
-                <td class="fila_autors">{{autor.first_name}}</td>
-                <td class="fila_autors">{{autor.last_name}}</td>
+                <td class="fila_autors"><p>{{autor.first_name}}</p></td>
+                <td class="fila_autors"><p>{{autor.last_name}}</p></td>
                 <td colspan="2">
-                    <button><a href="">saber-ne +</a></button>
+                    <button><a href="{% url 'author-details' autor.slug%}">saber-ne +</a></button>
                 </td>
             </tr>
             <tr><td colspan="4"><hr class="linia2"></td></tr>

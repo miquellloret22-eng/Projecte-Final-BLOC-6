@@ -21,7 +21,7 @@ table {
     width: 80%;
     border-collapse: collapse;
     margin: auto;
-    align-self: center;
+    text-align: left;
 }
 
 td {

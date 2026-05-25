@@ -1,0 +1,23 @@
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    {{autor.first_name}}
+{% endblock %}
+
+{% block content %}
+    <h1 class="detalls">Detalls de l'autor</h1>
+    <p><b>Nom: </b>{{autor.first_name}}</p>
+    <p><b>Cognom: </b>{{autor.last_name}}</p>
+    <p><b>Adreça: </b>{{autor.email_address}}</p>
+
+    <h2>Posts publicats per {{autor}}</h2>
+    <div class="posts-grid">
+        {% for post in posts_autor %}
+            {% include "blog/includes/post.html" with info=post %}
+        {% empty %}
+            <p>No hi ha posts</p>
+        {% endfor %}
+    </div>
+{% endblock %}
