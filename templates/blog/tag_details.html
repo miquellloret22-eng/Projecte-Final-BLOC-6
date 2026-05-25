@@ -6,14 +6,14 @@
 {% endblock %}
 
 {% block page_title %}
-    Tags
+    {{tag.caption}}
 {% endblock %}
 
 {% block content %}
-    <div class="etiquetes">
-        <h1>Etiquetes</h1>
-        {% for etiqueta in ll_tags %}
-            <button><a href="{% url 'tags-details' etiqueta.id%}">{{etiqueta.caption}}</a></button>
+    <h1>Llista de tots els posts amb <b><u>{{tag.caption}}</u></b></h1>
+    <div class="posts-grid">
+        {% for post in posts_tag %}
+            {% include "blog/includes/post.html" with info=post %}
         {% empty %}
             <p>No hi ha posts</p>
         {% endfor %}
