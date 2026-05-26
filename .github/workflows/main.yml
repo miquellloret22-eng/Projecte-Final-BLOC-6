@@ -32,10 +32,17 @@ jobs:
     - name: Crear documentacio
       run: |
         mkdir -p docs
+        
         export DJANGO_SETTINGS_MODULE=my_site.settings
-        python manage.py shell -c "import django; django.setup()"
-        python -m pydoc -w manage
-        python -m pydoc -w blog.views
+        
+        python -c "
+        import django
+        django.setup()
+        
+        import pydoc
+        pydoc.writedoc('manage')
+        pydoc.writedoc('blog.views')
+        "
         mv *.html docs/
 
         echo "<h1>Documentació del projecte</h1>" > docs/index.html
