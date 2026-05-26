@@ -38,12 +38,14 @@ def post_details(request, slug):
     """
     Retorna detalls.html renderitzat
     """
+    try:
+        post = Post.objects.get(slug=slug)
+        return render(request, "blog/detalls.html", {
+            "post": post
+        })
 
-    post = Post.objects.get(slug=slug)
-    return render(request, "blog/detalls.html", {
-        "post": post
-    })
-
+    except:
+        raise Http404()
 
 def authors(request):
     """
