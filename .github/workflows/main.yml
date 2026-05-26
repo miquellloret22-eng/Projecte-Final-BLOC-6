@@ -29,6 +29,10 @@ jobs:
       run: |
         python manage.py migrate
 
+    - name: Carregar fixtures
+      run: |
+        python manage.py loaddata blog/fixtures/initial_data.json
+
     - name: Crear documentacio
       run: |
         mkdir -p docs
